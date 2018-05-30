@@ -3,7 +3,36 @@
 1. Creamos el componente PADRE
 
 ```javascript
-console.log("kedo")
+<template>
+      <div id="padre">
+            <Hijo :listacompleta="List" />
+      </div>
+</template>
+<script>
+import Hijo from './Hijo.vue'
+import listacompleta from '../data/lista.js'
+export default {
+      data () {
+            return {
+                  List : listacompleta.items
+            }
+      },
+      components: {
+            Hijo
+      }
+}
+</script>
+<style lang="scss">
+      #padre{
+            background: #eee;
+      }
+      #lista__nombres{
+            padding-left: 0;
+            margin: 0;
+            list-style: none;
+      }
+</style>
+
 ```
 2. Lo insertamos en el App.vue (en caso de ser parte)
 2. Creamos el componente HIJO
