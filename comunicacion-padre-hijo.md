@@ -1,6 +1,10 @@
 # Comunicacion entre un componente Padre a su componente Hijo en Vue
 
 1. Creamos el componente PADRE
+
+```javascript
+console.log("kedo")
+```
 2. Lo insertamos en el App.vue (en caso de ser parte)
 2. Creamos el componente HIJO
 3. Insertamos el componente Hijo en el PADRE
