@@ -1,4 +1,6 @@
-# Comunicacion entre un componente Padre a su componente Hijo en Vue
+# Comunicacion entre un componentes Padre-Hijo en Vue JS
+
+La comunicación de un componente PADRE a un componente HIJO se realiza a través de PROPS, que son "propiedades" que puede o no esperar el componente hijo para realizar una acción. Es importante saber que la información que recibe el HIJO a través del PADRE es inmutable para el HIJO ya que no debe (como buena práctica) eliminar o modificar el contenido. Por lo cual solo debe utilizar funciones puras o como hace referencia en la documentación de VUE, que sean de SOLO LECTURA.
 
 > 1. Creamos el componente PADRE
 
@@ -68,7 +70,7 @@ export default {
 }
 </script>
 ```
-> 3. Insertamos el componente Hijo en el PADRE
+> 3. Insertamos el componente HIJO en el PADRE
 
 ```javascript
 <template>
@@ -93,7 +95,7 @@ export default {
 </script>
 
 ```
-> 4. Creamos las props que va a utilizar el componente HIJO, por ejemplo: que sea un arreglo y sea requerido.
+> 4. Creamos las PROPS que va a utilizar el componente HIJO, con su nombre y sus propiedades, por ejemplo: que sea un arreglo y sea requerido.
 
 ```javascript
 
@@ -123,10 +125,43 @@ export default {
 }
 
 ```
-> 6. Colocamos las props en el HTML del HIJO insertado en el HTML del PADRE. Es muy importante el v-bind o : para "bindear" el valor.
+> 6. Colocamos las props en el HTML del HIJO insertado en el HTML del PADRE. Es muy importante el `v-bind` o `:` para "bindear" el valor.
 
 ```javascript
 
 <Hijo :listacompleta="List" />
 
 ```
+
+> 7 En el componente HIJO podemos iterar sobre el array "listacompleta" que es el "PROPS" que se esta pasando.
+
+```javascript
+
+<template>
+      <ul id="lista__nombres">
+            <li v-for="item in listacompleta">
+                  {{item.nombre}} {{item.apellido}}
+            </li>
+      </ul>
+</template>
+
+<script>
+export default {
+      data () {
+            return {
+
+            }
+      },
+      props: {
+            listacompleta:{
+                  type: Array,
+                  required: true
+            }
+      }
+
+}
+</script>
+
+```
+
+> Nos mostrara dentro del componente PADRE los datos del Arreglo.
