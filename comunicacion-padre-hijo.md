@@ -1,6 +1,6 @@
 # Comunicacion entre componentes Padre-Hijo en Vue JS
 
-La comunicación de un componente PADRE a un componente HIJO se realiza a través de PROPS, que son "propiedades" que puede o no esperar el componente hijo para realizar una acción. Es importante saber que la información que recibe el HIJO a través del PADRE es inmutable para el HIJO ya que no debe (como buena práctica) eliminar o modificar el contenido. Por lo cual solo debe utilizar funciones puras o como hace referencia en la documentación de VUE, que sean de SOLO LECTURA.
+La comunicación de un componente PADRE a un componente HIJO se realiza a través de PROPS, que son propiedades que puede o no esperar el componente HIJO para realizar una acción. Es importante saber que la información que recibe el HIJO a través del PADRE es inmutable para el HIJO ya que no debe (como buena práctica) eliminar o modificar el contenido. Por lo cual solo debe utilizar funciones puras o como hace referencia en la documentación de VUE, que sean de SOLO LECTURA.
 
 > 1. Creamos el componente PADRE
 
