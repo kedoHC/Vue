@@ -1,4 +1,4 @@
-# Comunicacion entre un componentes Padre-Hijo en Vue JS
+# Comunicacion entre componentes Padre-Hijo en Vue JS
 
 La comunicación de un componente PADRE a un componente HIJO se realiza a través de PROPS, que son "propiedades" que puede o no esperar el componente hijo para realizar una acción. Es importante saber que la información que recibe el HIJO a través del PADRE es inmutable para el HIJO ya que no debe (como buena práctica) eliminar o modificar el contenido. Por lo cual solo debe utilizar funciones puras o como hace referencia en la documentación de VUE, que sean de SOLO LECTURA.
 
@@ -107,7 +107,7 @@ props: {
 }
 
 ```
-> 5. Guardamos en una propiedad del PADRE la info a pasar al HIJO, NO Olvidar el formato establecido de props en el Hijo, si es un Objeto o Array, etc y si es requerido. En este ejemplo consumimos un servicio que esta en lista.js que devuelve un Arreglo.
+> 5. Guardamos en una propiedad del PADRE la información a pasar al HIJO, NO Olvidar el formato establecido de PROPS en el Hijo, si es un Objeto o Array, etc y si es requerido. En este ejemplo consumimos un servicio que está en lista.js que devuelve un Arreglo.
 
 ```javascript
 
@@ -125,7 +125,7 @@ export default {
 }
 
 ```
-> 6. Colocamos las props en el HTML del HIJO insertado en el HTML del PADRE. Es muy importante el `v-bind` o `:` para "bindear" el valor.
+> 6. Colocamos las PROPS en el HTML del HIJO insertado en el HTML del PADRE. Es muy importante el `v-bind` o `:` para "bindear" el valor.
 
 ```javascript
 
