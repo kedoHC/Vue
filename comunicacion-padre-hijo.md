@@ -1,4 +1,4 @@
-#Comunicacion entre un componente Padre a su componente Hijo en Vue
+# Comunicacion entre un componente Padre a su componente Hijo en Vue
 
 1. Creamos el componente PADRE
 2. Lo insertamos en el App.vue (en caso de ser parte)
